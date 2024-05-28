@@ -3,6 +3,23 @@ package ru.job4j.oop;
 public class Calculator {
     private static int x = 5;
 
+    public static class Multiple {
+        private final int result;
+
+        public Multiple(int number) {
+            this.result = number;
+        }
+
+        public int getResult() {
+            return this.result;
+        }
+    }
+
+    public static Multiple getMultiple(int value) {
+        int result = value * value;
+        return new Multiple(result);
+    }
+
     public static int sum(int y) {
         return x + y;
     }
@@ -35,5 +52,7 @@ public class Calculator {
         System.out.println("divide: " + result4);
         double result5 = calculator.sumAllOperation(7);
         System.out.println("sumAllOperation: " + result5);
+        Calculator.Multiple multiple = Calculator.getMultiple(3);
+        System.out.println("Квадрат числа равен " + multiple.getResult());
     }
 }
