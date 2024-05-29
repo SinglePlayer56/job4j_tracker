@@ -36,6 +36,6 @@ public class Item {
     }
 
     public LocalDateTime getCreatedDateTime() {
-        return this.created;
+        return created;
     }
 }
