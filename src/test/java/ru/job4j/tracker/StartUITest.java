@@ -47,11 +47,13 @@ class StartUITest {
 
     @Test
     void whenDeleteItemIsNull() {
-        String[] answers = {"2"};
         Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId())};
         Input input = new MockInput(answers);
-        Item item = tracker.findById(2);
         StartUI.deleteItem(input, tracker);
-        assertThat(item).isNull();
+        Item findedItem = tracker.findById(item.getId());
+        assertThat(findedItem).isNull();
     }
 }
