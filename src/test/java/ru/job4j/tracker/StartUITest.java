@@ -129,7 +129,7 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test"));
         Item two = tracker.add(new Item("test"));
-        Input input = new MockInput(new String[]{"0", String.valueOf(one.getName()), "1"});
+        Input input = new MockInput(new String[]{"0", one.getName(), "1"});
         UserAction[] actions = {
                 new FindByName(output),
                 new Exit(output)
@@ -179,7 +179,7 @@ class StartUITest {
     void whenInvalidExit() {
         Output output = new StubOutput();
         Input input = new MockInput(
-                new String[] {"1", "0"}
+                new String[]{"1", "0"}
         );
         Tracker tracker = new Tracker();
         UserAction[] actions = new UserAction[]{
