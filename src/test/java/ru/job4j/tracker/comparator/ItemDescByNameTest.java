@@ -24,6 +24,6 @@ class ItemDescByNameTest {
                 new Item(1, "Купить продукты"),
                 new Item(3, "Вынести мусор")
         );
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        assertThat(items).isEqualTo(expected);
     }
 }

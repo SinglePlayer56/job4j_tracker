@@ -24,6 +24,6 @@ class ItemAscByNameTest {
                 new Item(4, "Поучить Java"),
                 new Item(2, "Сходить погулять")
         );
-        assertThat(items.toString()).isEqualTo(expected.toString());
+        assertThat(items).isEqualTo(expected);
     }
 }
