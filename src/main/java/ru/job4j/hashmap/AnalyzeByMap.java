@@ -31,8 +31,7 @@ public class AnalyzeByMap {
         HashMap<String, Integer> map = new HashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                int score = map.get(subject.name()) != null ? map.get(subject.name()) : 0;
-                map.put(subject.name(), score + subject.score());
+                map.put(subject.name(), map.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         return map;
